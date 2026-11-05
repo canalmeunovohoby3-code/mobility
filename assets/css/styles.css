@@ -532,12 +532,12 @@ body.menu-open .nav-toggle span:last-child { top: 21px; transform: translateX(-5
 }
 .ticker::after {
   content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none;
-  background: linear-gradient(90deg, #031326 0%, #031326 4%, transparent 14%, transparent 86%, #031326 96%, #031326 100%);
+  background: linear-gradient(90deg, #031326 0, transparent 48px, transparent calc(100% - 48px), #031326 100%);
 }
 .ticker-track {
   position: relative; z-index: 1;
   display: flex; width: max-content; align-items: center; gap: 2.2rem;
-  padding-block: 1.05rem; animation: tickerMove 32s linear infinite; will-change: transform;
+  padding-block: 1.05rem; animation: tickerMove 290s linear infinite; will-change: transform;
 }
 .ticker-track span {
   display: inline-flex; align-items: center; color: rgba(255, 255, 255, 0.9);
