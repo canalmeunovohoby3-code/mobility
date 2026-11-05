@@ -1283,15 +1283,6 @@ body.menu-open .nav-toggle span:last-child { top: 21px; transform: translateX(-5
   color: rgba(255, 255, 255, 0.58); font-size: 0.68rem; letter-spacing: 0.02em;
 }
 .footer-bottom > p:last-child { display: flex; align-items: center; gap: 0.5rem; }
-.footer-wordmark {
-  position: relative; z-index: 0; overflow: hidden;
-  margin: 0 auto; padding-top: 0.4rem; color: transparent;
-  font-family: var(--display); font-size: clamp(4rem, 15vw, 14.5rem);
-  font-weight: 700; line-height: 0.68; letter-spacing: -0.09em;
-  text-align: center; white-space: nowrap; user-select: none;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.065);
-}
-.footer-wordmark span { color: rgba(216, 178, 122, 0.22); -webkit-text-stroke: 0; }
 
 /* 15 — WHATSAPP FLUTUANTE */
 .whatsapp-float {
@@ -1605,7 +1596,6 @@ body.menu-open .nav-toggle span:last-child { top: 21px; transform: translateX(-5
   .footer-cols { grid-template-columns: 1fr; }
   .footer-col:last-child { grid-column: auto; }
   .footer-bottom { align-items: flex-start; flex-direction: column; gap: 0.45rem; font-size: 0.6rem; }
-  .footer-wordmark { font-size: clamp(3.5rem, 18vw, 6rem); }
   .whatsapp-float { width: 56px; padding: 0; justify-content: center; }
   .whatsapp-text { display: none; }
   .whatsapp-icon { width: 100%; height: 100%; background: transparent; }

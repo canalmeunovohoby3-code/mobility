@@ -36,6 +36,44 @@
   }
 
   /* ------------------------------------------------------------------------
+     TICKER — garante conteúdo suficiente para nunca abrir espaço vazio
+     ------------------------------------------------------------------------ */
+  const tickerTrack = document.querySelector('.ticker-track');
+
+  if (tickerTrack) {
+    const tickerSpeed = 30;
+    let tickerResizeTimer = null;
+
+    const fillTicker = () => {
+      let guard = 0;
+
+      while (
+        tickerTrack.scrollWidth / 2 < window.innerWidth + 160 &&
+        guard < 5
+      ) {
+        tickerTrack.insertAdjacentHTML('beforeend', tickerTrack.innerHTML);
+        guard += 1;
+      }
+
+      const half = tickerTrack.scrollWidth / 2;
+      if (half > 0) {
+        tickerTrack.style.animationDuration = half / tickerSpeed + 's';
+      }
+    };
+
+    fillTicker();
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(fillTicker);
+    }
+
+    window.addEventListener('resize', () => {
+      window.clearTimeout(tickerResizeTimer);
+      tickerResizeTimer = window.setTimeout(fillTicker, 200);
+    });
+  }
+
+  /* ------------------------------------------------------------------------
      MENU MOBILE
      ------------------------------------------------------------------------ */
   const menuToggle = document.querySelector('.nav-toggle');
