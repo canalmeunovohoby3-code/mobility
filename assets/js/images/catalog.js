@@ -195,14 +195,15 @@
       section: 'services',
       name: 'Serviço — Executivo & Corporativo',
       description: 'Imagem do card Executivo & Corporativo.',
-      src: 'assets/img/svc-corporativo-1200.jpg',
-      alt: 'Executiva caminhando em ambiente corporativo',
-      width: 1200,
-      height: 801,
+      src: 'assets/corporativo.jpeg',
+      alt: 'Executivo sendo recebido por um motorista ao lado de um SUV preto em frente a um edifício corporativo',
+      width: 1600,
+      height: 900,
       sizes: '(min-width: 1100px) 42vw, 100vw',
       variants: [
-        { src: 'assets/img/svc-corporativo-700.jpg', width: 700 },
-        { src: 'assets/img/svc-corporativo-1200.jpg', width: 1200 }
+        { src: 'assets/img/svc-corporativo-novo-700.jpg', width: 700 },
+        { src: 'assets/img/svc-corporativo-novo-1200.jpg', width: 1200 },
+        { src: 'assets/corporativo.jpeg', width: 1600 }
       ],
       usage: ['Serviços — Executivo & Corporativo'],
       editable: true
@@ -212,14 +213,15 @@
       section: 'services',
       name: 'Serviço — Eventos',
       description: 'Imagem do card Eventos.',
-      src: 'assets/img/svc-eventos-1200.jpg',
-      alt: 'Convidados em evento corporativo elegante',
-      width: 1200,
-      height: 1800,
-      sizes: '(min-width: 1100px) 30vw, 100vw',
+      src: 'assets/eventos.jpeg',
+      alt: 'Convidados entrando em um espaço de eventos iluminado ao anoitecer, com SUV executivo em primeiro plano',
+      width: 1600,
+      height: 900,
+      sizes: '(min-width: 1100px) 33vw, 100vw',
       variants: [
-        { src: 'assets/img/svc-eventos-700.jpg', width: 700 },
-        { src: 'assets/img/svc-eventos-1200.jpg', width: 1200 }
+        { src: 'assets/img/svc-eventos-novo-700.jpg', width: 700 },
+        { src: 'assets/img/svc-eventos-novo-1200.jpg', width: 1200 },
+        { src: 'assets/eventos.jpeg', width: 1600 }
       ],
       usage: ['Serviços — Eventos'],
       editable: true
@@ -302,7 +304,7 @@
   ];
 
   window.MobilityImageCatalog = {
-    version: '1.1.0-local',
+    version: '1.2.0-local',
     mode: 'local',
     allowedTypes: ['image/jpeg', 'image/png', 'image/webp'],
     maxFileSize: 8 * 1024 * 1024,
