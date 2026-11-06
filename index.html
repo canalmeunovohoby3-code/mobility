@@ -42,7 +42,9 @@
     document.documentElement.classList.remove('no-js');
     document.documentElement.classList.add('js');
   </script>
-  <script src="assets/js/main.js?v=20261105-17" defer></script>
+  <script src="assets/js/images/catalog.js?v=20261106-2" defer></script>
+  <script src="assets/js/images/public-runtime.js?v=20261106-1" defer></script>
+  <script src="assets/js/main.js?v=20261105-18" defer></script>
 
   <!-- DADOS ESTRUTURADOS — sem endereço, avaliações ou informações não fornecidas. -->
   <script type="application/ld+json">
@@ -175,7 +177,7 @@
       <div class="container">
         <div class="header-bar">
           <a class="brand" href="#inicio" aria-label="Mobility Transfer Executivo — ir para o início">
-            <img class="brand-logo" src="assets/logo.png" alt="" width="1027" height="213" fetchpriority="high" decoding="async">
+            <img class="brand-logo" data-image-id="brand-logo" src="assets/logo.png" alt="" width="1027" height="213" fetchpriority="high" decoding="async">
           </a>
 
           <nav class="nav-desktop" aria-label="Navegação principal">
@@ -309,6 +311,7 @@
           <div class="hero-photo">
             <img
               class="hero-img"
+              data-image-id="hero-main"
               src="assets/img/fotohero.jpeg"
               alt="Sedã executivo preto estacionado em frente a uma residência moderna"
               width="942"
@@ -475,10 +478,11 @@
           <div class="experience-media reveal" style="--delay: .1s">
             <div class="experience-photo">
               <img
-                src="assets/img/experiencia.jpeg"
-                alt="Interior de SUV executivo com painel digital, volante e bancos em couro"
-                width="1170"
-                height="1121"
+                data-image-id="experience-main"
+                src="assets/hero.jpeg"
+                alt="Van, sedã e SUV executivos pretos lado a lado em frente a um edifício corporativo ao anoitecer"
+                width="1600"
+                height="900"
                 loading="lazy"
                 decoding="async">
               <span class="media-badge"><span class="status-dot" aria-hidden="true"></span> TEMPO PRODUTIVO</span>
@@ -667,13 +671,15 @@
         <div class="service-grid">
           <article class="service-card service-card--feature reveal" data-glow style="--delay: .04s">
             <img
-              src="assets/img/svc-aeroporto-1200.jpg"
-              srcset="assets/img/svc-aeroporto-700.jpg 700w,
-                      assets/img/svc-aeroporto-1200.jpg 1200w"
+              data-image-id="service-airport"
+              src="assets/aeroporto.jpeg"
+              srcset="assets/img/svc-aeroporto-novo-700.jpg 700w,
+                      assets/img/svc-aeroporto-novo-1200.jpg 1200w,
+                      assets/aeroporto.jpeg 1600w"
               sizes="(min-width: 1100px) 58vw, 100vw"
-              alt="Pátio de aeroporto iluminado pelo sol poente, com aeronave e terminal ao fundo"
-              width="1200"
-              height="800"
+              alt="Aeroporto iluminado ao pôr do sol, com aeronave e terminal ao fundo"
+              width="1600"
+              height="900"
               loading="lazy"
               decoding="async">
             <div class="service-shade" aria-hidden="true"></div>
@@ -690,6 +696,7 @@
 
           <article class="service-card service-card--corporate reveal" data-glow style="--delay: .1s">
             <img
+              data-image-id="service-corporate"
               src="assets/img/svc-corporativo-1200.jpg"
               srcset="assets/img/svc-corporativo-700.jpg 700w,
                       assets/img/svc-corporativo-1200.jpg 1200w"
@@ -713,6 +720,7 @@
 
           <article class="service-card service-card--events reveal" data-glow style="--delay: .04s">
             <img
+              data-image-id="service-events"
               src="assets/img/svc-eventos-1200.jpg"
               srcset="assets/img/svc-eventos-700.jpg 700w,
                       assets/img/svc-eventos-1200.jpg 1200w"
@@ -736,13 +744,11 @@
 
           <article class="service-card service-card--travel reveal" data-glow style="--delay: .1s">
             <img
-              src="assets/img/svc-viagens-1200.jpg"
-              srcset="assets/img/svc-viagens-700.jpg 700w,
-                      assets/img/svc-viagens-1200.jpg 1200w"
-              sizes="(min-width: 1100px) 33vw, 100vw"
-              alt="SUV premium em estrada costeira rochosa ao pôr do sol"
-              width="1200"
-              height="801"
+              data-image-id="service-travel"
+              src="assets/viagenseturismo.PNG"
+              alt="Rua turística com guarda-chuvas iluminados e arquitetura europeia"
+              width="299"
+              height="191"
               loading="lazy"
               decoding="async">
             <div class="service-shade" aria-hidden="true"></div>
@@ -759,6 +765,7 @@
 
           <article class="service-card service-card--driver reveal" data-glow style="--delay: .16s">
             <img
+              data-image-id="service-driver"
               src="assets/img/svc-motorista-1200.jpg"
               srcset="assets/img/svc-motorista-700.jpg 700w,
                       assets/img/svc-motorista-1200.jpg 1200w"
@@ -923,7 +930,7 @@
             </div>
 
             <div class="map-canvas">
-              <img class="map-bg" src="assets/img/regioes-saopaulo-1600.jpg" srcset="assets/img/regioes-saopaulo-800.jpg 800w, assets/img/regioes-saopaulo-1600.jpg 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="" width="1600" height="900" loading="lazy" decoding="async" aria-hidden="true">
+              <img class="map-bg" data-image-id="map-background" src="assets/img/regioes-saopaulo-1600.jpg" srcset="assets/img/regioes-saopaulo-800.jpg 800w, assets/img/regioes-saopaulo-1600.jpg 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="" width="1600" height="900" loading="lazy" decoding="async" aria-hidden="true">
               <div class="map-overlay" aria-hidden="true"></div>
 
               <svg class="brazil-map" viewBox="20 18 480 480" fill="none" aria-hidden="true">
@@ -1088,6 +1095,7 @@
 
           <div class="final-media reveal" style="--delay: .1s">
             <img
+              data-image-id="cta-image"
               src="assets/img/cta-sedan-1800.jpg"
               srcset="assets/img/cta-sedan-900.jpg 900w,
                       assets/img/cta-sedan-1800.jpg 1800w"
@@ -1123,7 +1131,7 @@
     <div class="container footer-top">
       <div class="footer-brand-col">
         <a class="brand brand--footer" href="#inicio" aria-label="Mobility Transfer Executivo — voltar ao início">
-          <img class="brand-logo" src="assets/logo.png" alt="" width="1027" height="213" loading="lazy" decoding="async">
+          <img class="brand-logo" data-image-id="brand-logo" src="assets/logo.png" alt="" width="1027" height="213" loading="lazy" decoding="async">
         </a>
         <p>Transporte executivo, transfers, viagens e deslocamentos corporativos com planejamento, conforto e discrição.</p>
         <a class="text-link text-link--light" href="https://wa.me/5511945904781" target="_blank" rel="noopener noreferrer">

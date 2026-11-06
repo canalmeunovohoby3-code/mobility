@@ -405,92 +405,18 @@
   /* ------------------------------------------------------------------------
      GALERIA + LIGHTBOX
      ------------------------------------------------------------------------ */
-  const galleryItems = [
-    {
-      full: 'assets/img/galeria1.jpeg',
-      thumb: 'assets/img/gallery/galeria-01-700.jpeg',
-      alt: 'Bandeja traseira com água, lenços e itens de cortesia',
-      width: 1170,
-      height: 1111
-    },
-    {
-      full: 'assets/img/galeria2.jpeg',
-      thumb: 'assets/img/gallery/galeria-02-700.jpeg',
-      alt: 'Porta-malas vazio de um SUV executivo',
-      width: 1163,
-      height: 1131
-    },
-    {
-      full: 'assets/img/galeria3.jpeg',
-      thumb: 'assets/img/gallery/galeria-03-700.jpeg',
-      alt: 'Bancos traseiros em couro de um SUV executivo',
-      width: 1170,
-      height: 1098
-    },
-    {
-      full: 'assets/img/galeria4.jpeg',
-      thumb: 'assets/img/gallery/galeria-04-700.jpeg',
-      alt: 'Traseira de um sedã Mercedes-Benz preto',
-      width: 1170,
-      height: 848
-    },
-    {
-      full: 'assets/img/galeria5.jpeg',
-      thumb: 'assets/img/gallery/galeria-05-700.jpeg',
-      alt: 'Frente de um sedã Mercedes-Benz preto',
-      width: 1170,
-      height: 1009
-    },
-    {
-      full: 'assets/img/galeria6.jpeg',
-      thumb: 'assets/img/gallery/galeria-06-700.jpeg',
-      alt: 'Sedã Toyota preto estacionado em frente a uma casa moderna',
-      width: 942,
-      height: 1129
-    },
-    {
-      full: 'assets/img/galeria7.jpeg',
-      thumb: 'assets/img/gallery/galeria-07-700.jpeg',
-      alt: 'Sedã Toyota preto em área de embarque de aeroporto',
-      width: 914,
-      height: 1117
-    },
-    {
-      full: 'assets/img/galeria8.jpeg',
-      thumb: 'assets/img/gallery/galeria-08-700.jpeg',
-      alt: 'Van, sedã e SUV pretos lado a lado em frente a um edifício corporativo',
-      width: 1600,
-      height: 900
-    },
-    {
-      full: 'assets/img/galeria9.jpeg',
-      thumb: 'assets/img/gallery/galeria-09-700.jpeg',
-      alt: 'Interior de van executiva com poltronas de couro e iluminação ambiente',
-      width: 1138,
-      height: 1104
-    },
-    {
-      full: 'assets/img/galeria10.jpeg',
-      thumb: 'assets/img/gallery/galeria-10-700.jpeg',
-      alt: 'Poltronas reclináveis de couro em van executiva',
-      width: 1170,
-      height: 1117
-    },
-    {
-      full: 'assets/img/galeria11.jpeg',
-      thumb: 'assets/img/gallery/galeria-11-700.jpeg',
-      alt: 'Van executiva preta em garagem coberta',
-      width: 1153,
-      height: 1141
-    },
-    {
-      full: 'assets/img/galeria12.jpeg',
-      thumb: 'assets/img/gallery/galeria-12-700.jpeg',
-      alt: 'Porta-malas de van executiva carregado com malas',
-      width: 928,
-      height: 1097
-    }
-  ];
+  const galleryFromCatalog =
+    window.MobilityImageCatalog && window.MobilityImageCatalog.gallery;
+
+  const galleryItems = Array.isArray(galleryFromCatalog)
+    ? galleryFromCatalog.map((item) => ({
+        full: item.src,
+        thumb: item.thumb,
+        alt: item.alt,
+        width: item.width,
+        height: item.height
+      }))
+    : [];
 
   const galleryFeature = document.getElementById('gallery-feature');
   const galleryMain = document.getElementById('gallery-main');
@@ -548,6 +474,11 @@
       if (lightbox) openLightbox(currentGalleryIndex);
     });
 
+    galleryThumbs.forEach((thumb, index) => {
+      const image = thumb.querySelector('img');
+      if (image && galleryItems[index]) image.src = galleryItems[index].thumb;
+    });
+
     galleryThumbs.forEach((thumb) => {
       thumb.addEventListener('click', () => {
         const index = Number(thumb.getAttribute('data-index'));
@@ -562,6 +493,8 @@
         }
       });
     });
+
+    setGallery(0, true);
   }
 
   const lightboxImage = lightbox ? lightbox.querySelector('img') : null;
